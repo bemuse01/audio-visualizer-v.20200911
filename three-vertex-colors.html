@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <script src="three.min.r118.js"></script>
+        <script src="js/r118/CopyShader.js"></script>
+        <script src="js/r118/EffectComposer.js"></script>
+        <script src="js/r118/RenderPass.js"></script>
+        <script src="js/r118/ShaderPass.js"></script>
+        <script src="js/r118/UnrealBloomPass.js"></script>
+        <script src="js/r118/LuminosityHighPassShader.js"></script>
+        <script src="js/r118/FXAAShader.js"></script>
+        <script src="js/lib/three-vertex-colors/js/object.method.js"></script>
+        <script src="js/lib/three-vertex-colors/js/object.js"></script>
+        <script src="js/lib/three-vertex-colors/js/move.js"></script>
+        <script src="js/lib/three-vertex-colors/js/util.js"></script>
+        <script src="js/lib/three-vertex-colors/js/shader.js"></script>
+		<style>
+            body{
+                background: black;
+                padding: 0;
+                margin: 0;
+                overflow: hidden;
+            }
+            #canvas{
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                opacity: 1;
+                /* filter: drop-shadow(0px 0px 20px white); */
+            }
+		</style>
+	</head>
+	<body>
+    <canvas id="canvas"></canvas>
+    <script src="js/lib/three-vertex-colors/js/main.js"></script>
+	</body>
+</html>
