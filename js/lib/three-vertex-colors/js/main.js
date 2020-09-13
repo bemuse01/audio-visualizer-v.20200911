@@ -7,10 +7,10 @@ const simplex = new SimplexNoise()
 const param = {
     circle: {
         size: {
-            inner: 10,
-            outer: 10 + 0.1
+            inner: 8,
+            outer: 8 + 0.1
         },
-        seg: 255
+        seg: 599
     }
 }
 
@@ -55,7 +55,7 @@ function init(){
 function setAudio(){
     audio = new Audio()
     audio.loop = true
-    audio.src = `song/LiSA - Unlasting.mp3`
+    audio.src = `song/Konomi Suzuki - Realize.mp3`
     audio.play()
     
     let context = new AudioContext()
