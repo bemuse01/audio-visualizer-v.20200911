@@ -19,5 +19,12 @@ const object_method = {
         }
         let result = [...temp, ...temp.reverse()]
         return [...result, ...result]
+    },
+    createNoise(sample){
+        let array = sample.attributes.position.array, temp = [], smooth = 10, rf = 0.0001
+        for(let i = 0; i < array.length / 2 / 3; i++){
+            temp[i] = simplex.noise3D(array[i * 3] / smooth, array[i * 3 + 1] / smooth, i * rf)
+        }
+        return temp.map(e => ((e + 1) / 2) * 2)
     }
 }

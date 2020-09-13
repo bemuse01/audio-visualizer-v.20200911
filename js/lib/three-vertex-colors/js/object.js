@@ -10,6 +10,7 @@ const object = {
             vector.push(x, y, 0)
         } */
         let geometry = new THREE.RingBufferGeometry(param.circle.size.inner, param.circle.size.outer, param.circle.seg)
+        let noise = object_method.createNoise(geometry)
 
         /* let position = sample.vertices.map((e, i) => [e.x, e.y, e.z].join()).slice(1) 
         position.push(...points)
@@ -36,6 +37,8 @@ const object = {
         mesh.rotation.z = 90 * radian
         mesh.vertices = [...geometry.attributes.position.array]
         mesh.layers.set(layer)
+        mesh.noise = noise
+        console.log(noise)
 
         group.add(mesh)
         scene.add(group)
@@ -68,7 +71,7 @@ const object = {
         let material = new THREE.MeshBasicMaterial({
             color: 0xffffff,
             transparent: true,
-            opacity: 0.75
+            opacity: 0.9
         })
         let mesh = new THREE.Mesh(geometry, material)
         mesh.rotation.z = 90 * radian

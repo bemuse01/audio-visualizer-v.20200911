@@ -2,12 +2,13 @@ const clock = new THREE.Clock()
 const radian = Math.PI / 180
 const ratio = window.devicePixelRatio
 const post = 0, nomral = 1
+const simplex = new SimplexNoise()
 
 const param = {
     circle: {
         size: {
             inner: 10,
-            outer: 10 + 0.05
+            outer: 10 + 0.1
         },
         seg: 255
     }
@@ -54,7 +55,7 @@ function init(){
 function setAudio(){
     audio = new Audio()
     audio.loop = true
-    audio.src = `song/Fate Stay Night Heaven's Feel - OST.mp3`
+    audio.src = `song/LiSA - Unlasting.mp3`
     audio.play()
     
     let context = new AudioContext()
@@ -75,15 +76,17 @@ function objects(){
 }
 
 function moves(){
+    let time = window.performance.now()
+
     analyser.getByteFrequencyData(dataArray)
 
-    move.moveCircle(group.circle.main.children, dataArray, dataArrayIndex)
+    move.moveCircle(group.circle.main.children, dataArray, dataArrayIndex, group.circle.main, time)
 }
 
 function postprocess(){
     let params = {
         // exposure: 1,
-        bloomStrength: 1,
+        bloomStrength: 0.75,
         bloomThreshold: 0,
         bloomRadius: 1.25
     }
